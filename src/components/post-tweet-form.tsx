@@ -68,11 +68,7 @@ export default function PostTweetForm() {
   };
   const onFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { files } = e.target;
-    if(files && files.length ===1){
-      if(files[0].size > 1 * 1024 * 1024){
-          alert("The maximum capacity that can be uploaded is 1mb");
-          return;
-      }
+    if (files && files.length === 1) {
       setFile(files[0]);
     }
   };
@@ -90,17 +86,17 @@ export default function PostTweetForm() {
       });
       if (file) {
         const locationRef = ref(
-          storage, 
+          storage,
           `tweets/${user.uid}-${user.displayName}/${doc.id}`
         );
         const result = await uploadBytes(locationRef, file);
-        const url = getDownloadURL(result.ref);
-        updateDoc(doc, {
+        const url = await getDownloadURL(result.ref);
+        await updateDoc(doc, {
           photo: url,
         });
-        setTweet("");
-        setFile(null);
       }
+      setTweet("");
+      setFile(null);
     } catch (e) {
       console.log(e);
     } finally {
@@ -108,30 +104,28 @@ export default function PostTweetForm() {
     }
   };
   return (
-    <>
-      <title>문학이 꿈틀</title>
-      <Form onSubmit={onSubmit}>
-        <TextArea
-          rows={5}
-          maxLength={180}
-          onChange={onChange}
-          value={tweet}
-          placeholder="소설 평가를 써 주세요."
-        />
-        <AttachFileButton htmlFor="file">
-          {file ? "Photo added ✅" : "Add photo"}
-        </AttachFileButton>
-        <AttachFileInput
-          onChange={onFileChange}
-          type="file"
-          id="file"
-          accept="image/*"
-        />
-        <SubmitBtn
-          type="submit"
-          value={isLoading ? "Posting..." : "Post Review"}
-        />
-      </Form>
-    </>
+    <Form onSubmit={onSubmit}>
+      <TextArea
+        required
+        rows={5}
+        maxLength={180}
+        onChange={onChange}
+        value={tweet}
+        placeholder="What is happening?!"
+      />
+      <AttachFileButton htmlFor="file">
+        {file ? "Photo added ✅" : "Add photo"}
+      </AttachFileButton>
+      <AttachFileInput
+        onChange={onFileChange}
+        type="file"
+        id="file"
+        accept="image/*"
+      />
+      <SubmitBtn
+        type="submit"
+        value={isLoading ? "Posting..." : "Post Tweet"}
+      />
+    </Form>
   );
 }
