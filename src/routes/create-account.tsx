@@ -57,7 +57,8 @@ export default function CreateAccount() {
   };
   return (
     <Wrapper>
-      <Title>Join 𝕏</Title>
+      <img src="/logo.png"/>
+      <Title>Join</Title>
       <Form onSubmit={onSubmit}>
         <Input
           onChange={onChange}
