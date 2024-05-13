@@ -57,7 +57,7 @@ export default function CreateAccount() {
   };
   return (
     <Wrapper>
-      <img src="/logo.png"/>
+      <img src="/logo.png" style={{ width: '150px', height: '150px' }} />
       <Title>Join</Title>
       <Form onSubmit={onSubmit}>
         <Input
