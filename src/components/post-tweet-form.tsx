@@ -96,7 +96,7 @@ export default function PostTweetForm() {
         maxLength={180}
         onChange={onChange}
         value={tweet}
-        placeholder="What is happening?!"
+        placeholder="소설 평가를 써 주세요."
       />
       <AttachFileButton htmlFor="file">
         {file ? "Photo added ✅" : "Add photo"}
