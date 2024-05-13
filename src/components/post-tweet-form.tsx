@@ -91,7 +91,7 @@ export default function PostTweetForm() {
   };
   return (
     <>
-    <title>문학이 꿈틀</title>
+      <title>문학이 꿈틀</title>
       <Form onSubmit={onSubmit}>
         <TextArea
           rows={5}
