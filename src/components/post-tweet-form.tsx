@@ -90,27 +90,30 @@ export default function PostTweetForm() {
     }
   };
   return (
-    <Form onSubmit={onSubmit}>
-      <TextArea
-        rows={5}
-        maxLength={180}
-        onChange={onChange}
-        value={tweet}
-        placeholder="소설 평가를 써 주세요."
-      />
-      <AttachFileButton htmlFor="file">
-        {file ? "Photo added ✅" : "Add photo"}
-      </AttachFileButton>
-      <AttachFileInput
-        onChange={onFileChange}
-        type="file"
-        id="file"
-        accept="image/*"
-      />
-      <SubmitBtn
-        type="submit"
-        value={isLoading ? "Posting..." : "Post Tweet"}
-      />
-    </Form>
+    <>
+    <title>문학이 꿈틀</title>
+      <Form onSubmit={onSubmit}>
+        <TextArea
+          rows={5}
+          maxLength={180}
+          onChange={onChange}
+          value={tweet}
+          placeholder="소설 평가를 써 주세요."
+        />
+        <AttachFileButton htmlFor="file">
+          {file ? "Photo added ✅" : "Add photo"}
+        </AttachFileButton>
+        <AttachFileInput
+          onChange={onFileChange}
+          type="file"
+          id="file"
+          accept="image/*"
+        />
+        <SubmitBtn
+          type="submit"
+          value={isLoading ? "Posting..." : "Post Tweet"}
+        />
+      </Form>
+    </>
   );
 }

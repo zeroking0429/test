@@ -13,8 +13,11 @@ const Text = styled.span`
 
 export default function LoadingScreen() {
   return (
-    <Wrapper>
-      <Text>Loading...</Text>
-    </Wrapper>
+    <>
+      <title>문학이 꿈틀</title>
+      <Wrapper>
+        <Text>Loading...</Text>
+      </Wrapper>
+    </>
   );
 }
