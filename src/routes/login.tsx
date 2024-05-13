@@ -48,7 +48,7 @@ export default function Login() {
     };
     return (
         <Wrapper>
-            <img src="/logo.png"/>
+            <img src="/logo1.jpg" style={{ width: '150px', height: '150px' }} />
             <Title>Log in</Title>
             <Form onSubmit={onSubmit}>
                 <Input
