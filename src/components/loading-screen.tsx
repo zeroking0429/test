@@ -13,10 +13,8 @@ const Text = styled.span`
 
 export default function LoadingScreen() {
   return (
-    <>
-      <Wrapper>
-        <Text>Loading...</Text>
-      </Wrapper>
-    </>
+    <Wrapper>
+      <Text>Loading...</Text>
+    </Wrapper>
   );
 }
