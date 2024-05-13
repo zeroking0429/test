@@ -1,7 +1,8 @@
 import { addDoc, collection } from "firebase/firestore";
 import { useState } from "react";
 import { styled } from "styled-components";
-import { auth, db } from "../firebase";
+import { auth, db, storage } from "../firebase";
+import { ref, uploadBytes } from "firebase/storage";
 
 const Form = styled.form`
   display: flex;
@@ -77,12 +78,19 @@ export default function PostTweetForm() {
     if (!user || isLoading || tweet === "" || tweet.length > 180) return;
     try {
       setLoading(true);
-      await addDoc(collection(db, "tweets"), {
+      const doc = await addDoc(collection(db, "tweets"), {
         tweet,
         createdAt: Date.now(),
         username: user.displayName || "Anonymous",
         userId: user.uid,
       });
+      if (file) {
+        const locationRef = ref(
+          storage, 
+          `tweets/${user.uid}-${user.displayName}/${doc.id}`
+        );
+        await uploadBytes(locationRef, file)
+      }
     } catch (e) {
       console.log(e);
     } finally {
@@ -111,7 +119,7 @@ export default function PostTweetForm() {
         />
         <SubmitBtn
           type="submit"
-          value={isLoading ? "Posting..." : "Post Tweet"}
+          value={isLoading ? "Posting..." : "Post Review"}
         />
       </Form>
     </>
