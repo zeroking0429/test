@@ -108,10 +108,10 @@ export default function PostTweetForm() {
         maxLength={180}
         onChange={onChange}
         value={tweet}
-        placeholder="What is happening?!"
+        placeholder="이야기를 써 주세요."
       />
       <AttachFileButton htmlFor="file">
-        {file ? "Photo added ✅" : "Add photo"}
+        {file ? "사진 추가 완료" : "사진 추가 하기"}
       </AttachFileButton>
       <AttachFileInput
         onChange={onFileChange}
@@ -121,7 +121,7 @@ export default function PostTweetForm() {
       />
       <SubmitBtn
         type="submit"
-        value={isLoading ? "Posting..." : "Post Tweet"}
+        value={isLoading ? "업로드 중..." : "업로드"}
       />
     </Form>
   );
