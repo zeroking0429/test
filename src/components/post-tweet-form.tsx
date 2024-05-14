@@ -85,10 +85,7 @@ export default function PostTweetForm() {
         userId: user.uid,
       });
       if (file) {
-        const locationRef = ref(
-          storage,
-          `tweets/${user.uid}-${user.displayName}/${doc.id}`
-        );
+        const locationRef = ref(storage, `tweets/${user.uid}/${doc.id}`);
         const result = await uploadBytes(locationRef, file);
         const url = await getDownloadURL(result.ref);
         await updateDoc(doc, {
@@ -111,10 +108,10 @@ export default function PostTweetForm() {
         maxLength={180}
         onChange={onChange}
         value={tweet}
-        placeholder="이야기를 써 주세요."
+        placeholder="What is happening?!"
       />
       <AttachFileButton htmlFor="file">
-        {file ? "사진 추가됨 ✅" : "사진 추가"}
+        {file ? "Photo added ✅" : "Add photo"}
       </AttachFileButton>
       <AttachFileInput
         onChange={onFileChange}
@@ -124,7 +121,7 @@ export default function PostTweetForm() {
       />
       <SubmitBtn
         type="submit"
-        value={isLoading ? "업로드 중..." : "업로드"}
+        value={isLoading ? "Posting..." : "Post Tweet"}
       />
     </Form>
   );
