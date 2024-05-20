@@ -8,11 +8,12 @@ const Wrapper = styled.div`
 `;
 
 const NovelInfo = styled.div`
-  width: 500px;
+  width: auto;
   height: 75%;
   display: grid;
   overflow: auto;
   border: 1px solid white;
+  padding-right: 10px;
 `;
 
 const NovelDiv = styled.div`
