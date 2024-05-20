@@ -13,7 +13,7 @@ const NovelInfo = styled.div`
   display: grid;
   overflow: auto;
   border: 1px solid white;
-  margin-right: 10px;
+  margin-right: 20px;
 `;
 
 const NovelDiv = styled.div`
@@ -21,7 +21,7 @@ const NovelDiv = styled.div`
   height: auto;
   overflow: auto;
   padding-top: 20px;
-  margin-right: 10px;
+  margin-right: 20px;
 `
 
 const Text = styled.h1`
@@ -37,7 +37,7 @@ const Back = styled.span`
 `
 
 const NovelBtn = styled.button`
-  font-size: 1.5em;
+  font-size: 1em;
   color: white;
   background-color: black;
   margin: 5px 10px;
