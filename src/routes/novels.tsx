@@ -13,7 +13,7 @@ const NovelInfo = styled.div`
   display: grid;
   overflow: auto;
   border: 1px solid white;
-  padding-right: 10px;
+  padding-right: 20px;
 `;
 
 const NovelDiv = styled.div`
@@ -21,7 +21,7 @@ const NovelDiv = styled.div`
   height: auto;
   overflow: auto;
   padding-top: 20px;
-  padding-right: 10px;
+  padding-right: 20px;
 `
 
 const Text = styled.h1`
