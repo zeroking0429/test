@@ -8,17 +8,19 @@ const Wrapper = styled.div`
 `;
 
 const NovelInfo = styled.div`
+  width: 500px;
   height: 75%;
   display: grid;
   overflow: auto;
-  margin: auto;
   border: 1px solid white;
 `;
 
 const NovelDiv = styled.div`
+  width: auto;
   height: auto;
   overflow: auto;
   padding-top: 20px;
+  padding-right: 10px;
 `
 
 const Text = styled.h1`
@@ -34,10 +36,10 @@ const Back = styled.span`
 `
 
 const NovelBtn = styled.button`
-  font-size: 2.5em;
+  font-size: 1.5em;
   color: white;
   background-color: black;
-  margin: 10px 20px;
+  margin: 5px 10px;
   border: 2px solid white;
   border-radius: 50px;
   &:hover {
